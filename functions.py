@@ -4,6 +4,9 @@ import os
 from datetime import datetime
 from google.cloud import bigquery
 
+# Creds are supplied through Airflow's environment variables
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/secret/creds.json'
+
 class extractLoad:
 
     def fetch_api(self):
