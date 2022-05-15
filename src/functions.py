@@ -6,7 +6,7 @@ from google.cloud import bigquery
 
 # Creds are supplied through Airflow's environment variables
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/secret/creds.json'
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/secret/creds.json'
 
 class extractLoad:
 
@@ -50,7 +50,7 @@ class extractLoad:
     Input : DataFrame
     Output : None
     """
-    
+
     def load_bigquery(self, dataframe):
         print("Data Loaded")
         table_id = 'final-347314.main.binance_api'
