@@ -24,6 +24,25 @@ Flask==2.1.0
 gunicorn==20.1.0
 great-expectations==0.13.44
 gcsfs==2022.5.0
+google==2.0.3
+google-api-core==1.31.5
+google-api-python-client==1.12.11
+google-auth==1.35.0
+google-auth-httplib2==0.0.4
+google-auth-oauthlib==0.4.6
+google-cloud-bigquery==1.21.0
+google-cloud-bigquery-storage==1.1.1
+google-cloud-core==1.0.3
+google-cloud-datastore==1.8.0
+google-cloud-firestore==1.7.0
+google-cloud-language==1.2.0
+google-cloud-storage==1.18.1
+google-cloud-translate==1.5.0
+google-colab @ file:///colabtools/dist/google-colab-1.0.0.tar.gz
+google-pasta==0.2.0
+google-resumable-media==0.4.1
+googleapis-common-protos==1.56.1
+googledrivedownloader==0.4
 idna==3.3
 importlib-metadata==4.8.2
 ipykernel==6.6.0
