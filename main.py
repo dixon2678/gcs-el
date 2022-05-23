@@ -13,7 +13,6 @@ def el_job():
     el = extractLoad()
     df = el.fetch_api()
     final_df = el.add_datetime(df)
-    return "Job complete"
     el.load_bigquery(final_df)
     return "Job complete"
 
