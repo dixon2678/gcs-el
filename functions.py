@@ -1,8 +1,13 @@
 import requests
 import pandas as pd
 import os
+import json
 from datetime import datetime
 from google.cloud import bigquery
+from google.oauth2 import service_account
+
+gcp_json_credentials_dict = json.loads(os.environ['creds'])
+credentials = service_account.Credentials.from_service_account_info(gcp_json_credentials_dict)
 
 # Creds are supplied through Airflow's environment variables
 
@@ -52,5 +57,5 @@ class extractLoad:
     def load_bigquery(self, dataframe):
         print("Data Loaded")
         table_id = 'final-347314.main.binance_api'
-        client = bigquery.Client()
+        client = bigquery.Client(credentials=credentials)
         client.load_table_from_dataframe(df, table_id)
