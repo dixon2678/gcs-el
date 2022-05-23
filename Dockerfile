@@ -1,17 +1,13 @@
-FROM python:3.8.2
+# https://hub.docker.com/_/python
+FROM python:3.10-slim
 
-ENV PYTHONBUFFERED True
+ENV PYTHONUNBUFFERED True
+
 ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
 
-RUN apt-get update
-RUN apt-get install default-jdk -y
 
-COPY ./requirements.txt /requirements.txt
-
-RUN pip install -r requirements.txt
-
-ENTRYPOINT [ "python" ]
+RUN pip install --no-cache-dir -r requirements.txt
 
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
