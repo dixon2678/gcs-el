@@ -58,4 +58,4 @@ class extractLoad:
         print("Data Loaded")
         table_id = 'final-347314.main.binance_api'
         client = bigquery.Client(credentials=credentials)
-        client.load_table_from_dataframe(df, table_id)
+        client.load_table_from_dataframe(dataframe, table_id)
