@@ -27,7 +27,7 @@ class extractLoad:
     def fetch_csv(self):
         url = 'gs://csv-etl-fyp/historical.csv'
         csv_df = pd.read_csv(url)
-        return df
+        return csv_df
     
     # Add datetime column - Minor Transformation
 
