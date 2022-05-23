@@ -1,2 +1,2 @@
-# binanceapi-el
-Simple EL script from Binance prices API to Google BigQuery
+# gcs-el
+Simple EL script from Google Cloud Storage bucket to Google BigQuery
