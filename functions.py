@@ -24,10 +24,9 @@ class extractLoad:
     Output : DataFrame
     """
 
-    def fetch_api(self):
-        r = requests.get("https://api.binance.com/api/v3/ticker/24hr")
-        r_json = r.json()
-        df = pd.read_json("https://api.binance.com/api/v3/ticker/24hr")
+    def fetch_csv(self):
+        url = 'gs://csv-etl-fyp/historical.csv'
+        csv_df = pd.read_csv(url)
         return df
     
     # Add datetime column - Minor Transformation
@@ -55,7 +54,7 @@ class extractLoad:
     """
 
     def load_bigquery(self, dataframe):
-        print("Data Loaded")
-        table_id = 'final-347314.main.binance_api'
+
+        table_id = 'final-347314.main.gcs_mcapcsv'
         client = bigquery.Client(credentials=credentials)
         client.load_table_from_dataframe(dataframe, table_id)
