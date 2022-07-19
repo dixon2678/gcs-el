@@ -16,8 +16,7 @@ class extractLoad:
     # Fetch prices from Binance API
 
     """
-    Fetches all information on every available pairs on Binance 
-    (cryptocurrency trading platform) as json
+    Fetches csv from GCS
     Converts to DataFrame with pandas built-in read_json
 
     Input : None
